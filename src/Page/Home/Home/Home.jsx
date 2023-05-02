@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-           <div className='mt-10  '>
+           <div className=' home '>
            <h2 className='text-center text-5xl text-'>Chef section</h2>
              <div className='grid grid-cols-3 mt-10 gap-10 mb-10'>
              {
