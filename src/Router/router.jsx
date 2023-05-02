@@ -15,7 +15,8 @@ import Blog from '../Page/Blog/Blog';
       children:[
         {
             path:'/',
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:({params})=>fetch('http://localhost:4000/recipe')
         },
         {
             path:'/about',
