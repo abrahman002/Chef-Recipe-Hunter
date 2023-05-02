@@ -20,6 +20,9 @@ const Login = () => {
         const password=form.password.value;
         console.log(email,password);
 
+        // password and email condition
+       
+
         signIn(email,password)
         .then(result=>{
             const userlogged=result.user;
@@ -35,8 +38,8 @@ const Login = () => {
     }
     return (
         <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col ">
-                <div className="text-center ">
+            <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>
                 </div>
                 <form onSubmit={handleLogin}>
