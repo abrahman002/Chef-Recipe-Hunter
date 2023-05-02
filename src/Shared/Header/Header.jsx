@@ -5,7 +5,15 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user ,logOut} = useContext(AuthContext);
+
+    const logOutUser=()=>{
+        logOut()
+        .then()
+        .catch(error=>{
+            console.log(error)
+        })
+    }
 
     return (
         <div className='banner'>
@@ -31,7 +39,7 @@ const Header = () => {
                         }
 
                         {user ?
-                            <button className="btn btn-success">Logout</button> :
+                            <button className="btn btn-success" onClick={logOutUser}>Logout</button> :
                             <button className="btn btn-warning"><Link to='/login'>Login</Link></button>
                         }
 
