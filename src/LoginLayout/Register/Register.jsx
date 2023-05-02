@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
@@ -6,14 +6,14 @@ const Register = () => {
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
 
-    const { createUser } = useState(AuthContext);
+    const {createUser} = useContext(AuthContext);
 
     const handleRegister = event => {
 
         event.preventDefault();
          setError('')
          setSuccess('')
-         
+
         const form = event.target;
         const name = form.name.value;
         const photo = form.photo.value;
@@ -21,6 +21,23 @@ const Register = () => {
         const password = form.password.value;
 
         // console.log(name,photo,email,password);
+        // password condition
+        if(!/.{6,}/.test(password)){
+            setError('Minimum eight in Six');
+            return;
+        }
+
+        createUser(email,password)
+        .then(result=>{
+            const loaduser=result.user;
+            console.log(loaduser)
+            setSuccess('Successfully Register')
+            form.reset();
+        })
+        .catch(error=>{
+            console.log(error.message)
+            setError(error.message)
+        })
 
     }
     return (
@@ -68,12 +85,12 @@ const Register = () => {
                             {/* Error and success message */}
                             <label className="label">
                                 <p className="text-success">
-                                    {/* {success} */}
+                                    {success}
                                 </p>
                             </label>
                             <label className="label">
                                 <p className="text-warning">
-                                    {/* {error} */}
+                                    {error}
                                 </p>
                             </label>
                         </div>
