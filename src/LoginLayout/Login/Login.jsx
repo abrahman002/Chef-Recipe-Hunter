@@ -7,7 +7,7 @@ const Login = () => {
    const [error,setError]=useState('')
    const [success,setSuccess]=useState('')
 
-   const {signIn,singInGoogle}=useContext(AuthContext);
+   const {signIn,singInGoogle,signInGithub}=useContext(AuthContext);
 
     const handleLogin=event=>{
         // console.log(event.target);
@@ -50,13 +50,24 @@ const Login = () => {
         })
     }
 
+    const signUpGithub=()=>{
+        signInGithub()
+        .then(result=>{
+            console.log(result.user)
+
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
+
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold mb-3">Login now!</h1>
                     <button className="btn btn-outline mb-5" onClick={googleSignIn}><FaGoogle /> <span className='ml-2'>Login With Google</span></button> <br />
-                    <button className="btn btn-outline"><FaGithub /><span className='ml-2'>Login With Github</span></button>
+                    <button className="btn btn-outline" onClick={signUpGithub}><FaGithub /><span className='ml-2'>Login With Github</span></button>
                 </div>
                 <form onSubmit={handleLogin}>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">

@@ -7,13 +7,24 @@ const Register = () => {
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
 
-    const {createUser,singInGoogle} = useContext(AuthContext);
+    const {createUser,singInGoogle,signInGithub} = useContext(AuthContext);
 
 
     const googleSignIn=()=>{
         singInGoogle()
         .then(result=>{
            console.log(result.user)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
+
+    const signUpGithub=()=>{
+        signInGithub()
+        .then(result=>{
+            console.log(result.user)
+
         })
         .catch(error=>{
             console.log(error)
@@ -58,7 +69,7 @@ const Register = () => {
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold mb-5">Register now!</h1>
                     <button className="btn btn-outline mb-5" onClick={googleSignIn}><FaGoogle /> <span className='ml-2'>Login With Google</span></button> <br />
-                    <button className="btn btn-outline"><FaGithub /><span className='ml-2'>Login With Github</span></button>
+                    <button className="btn btn-outline" onClick={signUpGithub}><FaGithub /><span className='ml-2'>Login With Github</span></button>
                 </div>
                 <form onSubmit={handleRegister}>
                     <div className="card flex-shrink-0 w-screen  max-w-sm shadow-xl bg-base-100 " >
