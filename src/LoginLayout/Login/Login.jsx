@@ -29,6 +29,11 @@ const Login = () => {
         console.log(email,password);
 
         // password and email condition
+
+        // if(password != email){
+        //     setError('password and email doesnt match')
+        //     return
+        // }
        
 
         signIn(email,password)
