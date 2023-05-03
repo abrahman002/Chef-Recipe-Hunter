@@ -10,6 +10,7 @@ import Login from "../LoginLayout/Login/Login";
 import Register from "../LoginLayout/Register/Register";
 import Work from "../Page/Home/Work/Work";
 import Recipe from '../Page/Recipe/Recipe.jsx';
+import PrivetRouter from "../PrivetRouter/PrivetRouter";
 
 
   const router = createBrowserRouter([
@@ -49,7 +50,7 @@ import Recipe from '../Page/Recipe/Recipe.jsx';
         },
         {
           path:'/recipe',
-          element:<Recipe></Recipe>
+          element:<PrivetRouter><Recipe></Recipe></PrivetRouter>
         }
 
       ]
