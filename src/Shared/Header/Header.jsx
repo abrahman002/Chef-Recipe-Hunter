@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import './Header.css'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import ActiveLink from '../../ActiveLink/ActiveLink';
 
 
 const Header = () => {
@@ -20,11 +21,11 @@ const Header = () => {
             <div className="navbar bg-base-100 container mx-auto banner ">
                 <div className="flex-1 ">
                     <a className="text-xl">FoodVillage</a>
-                    <div className='menubar'>
+                    <div className='menubar  flex'>
                         <Link to='/'>Home</Link>
-                        <Link to='/about'>About</Link>
-                        <Link to='/contact'>Contact</Link>
-                        <Link to='/blog'>Blog</Link>
+                        <ActiveLink to='/about'>About</ActiveLink>
+                        <ActiveLink to='/contact'>Contact</ActiveLink>
+                        <ActiveLink to='/blog'>Blog</ActiveLink>
                     </div>
                 </div>
                 <div className="flex-none gap-2">
