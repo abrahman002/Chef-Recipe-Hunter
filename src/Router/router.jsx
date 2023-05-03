@@ -9,6 +9,7 @@ import Blog from '../Page/Blog/Blog';
 import Login from "../LoginLayout/Login/Login";
 import Register from "../LoginLayout/Register/Register";
 import Work from "../Page/Home/Work/Work";
+import Recipe from '../Page/Recipe/Recipe.jsx';
 
 
   const router = createBrowserRouter([
@@ -45,6 +46,10 @@ import Work from "../Page/Home/Work/Work";
         {
           path:'/work',
           element:<Work></Work>
+        },
+        {
+          path:'/recipe',
+          element:<Recipe></Recipe>
         }
 
       ]

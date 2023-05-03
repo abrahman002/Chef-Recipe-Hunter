@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import { useLoaderData, useParams } from 'react-router-dom';
 import HomeCard from '../HomeCard/HomeCard';
 import Work from '../Work/Work';
+import Menu from '../Menu/menu'
 
 const Home = () => {
 
@@ -26,6 +27,7 @@ const Home = () => {
              </div>
            </div>
            <Work></Work>
+           <Menu></Menu>
         </div>
     );
 };
