@@ -15,7 +15,7 @@ const HomeCard = ({ data }) => {
                     <h4>Numbers of recipes:{data.num_recipes}</h4>
                     <div className="items-center justify-end card-actions">
                         <p>Like: {data.rating}k</p>
-                        <button className="btn btn-primary" ><Link to='/recipe'>View Recipes</Link></button>
+                        <button className="btn btn-primary" ><Link to={`/recipe/${data.id}`}>View Recipes</Link></button>
                     </div>
                 </div>
             </div>

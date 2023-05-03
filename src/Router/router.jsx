@@ -11,12 +11,14 @@ import Register from "../LoginLayout/Register/Register";
 import Work from "../Page/Home/Work/Work";
 import Recipe from '../Page/Recipe/Recipe.jsx';
 import PrivetRouter from "../PrivetRouter/PrivetRouter";
+import ErorPage from "../Page/ErrorPage/ErorPage";
 
 
   const router = createBrowserRouter([
     {
       path: "/",
       element:<Main></Main>,
+      errorElement:<ErorPage></ErorPage>,
       children:[
         {
             path:'/',
@@ -49,8 +51,9 @@ import PrivetRouter from "../PrivetRouter/PrivetRouter";
           element:<Work></Work>
         },
         {
-          path:'/recipe',
-          element:<PrivetRouter><Recipe></Recipe></PrivetRouter>
+          path:'/recipe/:id',
+          element:<PrivetRouter><Recipe></Recipe></PrivetRouter>,
+          loader:({params})=>fetch(`http://localhost:4000/recipe/${params.id}`)
         }
 
       ]
