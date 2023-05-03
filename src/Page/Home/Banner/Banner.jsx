@@ -4,7 +4,7 @@ import './Banner.css';
 const Banner = () => {
     return (
         <div className='banner '>
-            <div className=' flex justify-center items-center'>
+            <div className=' flex justify-center items-center banner-info'>
                 <div className='p-20 '>
                     <h2 className='text-5xl mb-5'>Fresh Grocery <br />
                         Shopping.

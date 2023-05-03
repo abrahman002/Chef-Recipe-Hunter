@@ -1,9 +1,9 @@
-
-
 @media only screen and (max-width: 576px) {
-    .footer{
+    .work{
         width: 90%;
+        padding: 0px;
+        margin: 0px;
+        font-size: 15px;
         
     }
-    
   }

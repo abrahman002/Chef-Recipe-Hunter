@@ -16,7 +16,7 @@ const Home = () => {
             <Banner></Banner>
            <div className=' home'>
            <h2 className='text-5xl text-center text-'>Chef section</h2>
-             <div className='grid grid-cols-3 gap-10 mt-10 mb-10'>
+             <div className='grid md:grid-cols-3 gap-10 mt-10 mb-10'>
              {
                 allData.map(data => <HomeCard
                   key={data.id}

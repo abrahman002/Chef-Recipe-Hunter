@@ -1,0 +1,12 @@
+
+@media only screen and (max-width: 576px) {
+    .menu-info{
+        width: 90%;
+        display: block;
+        padding: 0px;
+        padding: 0%;
+    }
+    .menu-info img{
+        width: 90%;
+    }
+  }

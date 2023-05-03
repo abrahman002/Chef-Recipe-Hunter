@@ -20,7 +20,7 @@ const Header = () => {
         <div className='banner'>
             <div className="navbar bg-base-100 container mx-auto banner ">
                 <div className="flex-1 ">
-                    <a className="text-xl">FoodVillage</a>
+                    <a className="text-xl title">FoodVillage</a>
                     <div className='menubar  flex'>
                         <Link to='/'>Home</Link>
                         <ActiveLink to='/about'>About</ActiveLink>
@@ -28,7 +28,7 @@ const Header = () => {
                         <ActiveLink to='/blog'>Blog</ActiveLink>
                     </div>
                 </div>
-                <div className="flex-none gap-2">
+                <div className="flex-none">
 
                     <div className='flex gap-5'>
                         {
