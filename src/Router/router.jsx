@@ -23,7 +23,7 @@ import ErorPage from "../Page/ErrorPage/ErorPage";
         {
             path:'/',
             element:<Home></Home>,
-            loader:({params})=>fetch('http://localhost:4000/recipe')
+            loader:({params})=>fetch('https://recipe-hinter.vercel.app/recipe')
         },
         {
             path:'/about',
@@ -53,7 +53,7 @@ import ErorPage from "../Page/ErrorPage/ErorPage";
         {
           path:'/recipe/:id',
           element:<PrivetRouter><Recipe></Recipe></PrivetRouter>,
-          loader:({params})=>fetch(`http://localhost:4000/recipe/${params.id}`)
+          loader:({params})=>fetch(`https://recipe-hinter.vercel.app/recipe/${params.id}`)
         }
 
       ]
