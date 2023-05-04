@@ -33,7 +33,7 @@ const Header = () => {
                     <div className='flex gap-5'>
                         {
                             auth.currentUser && <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
+                                <div className="w-10 rounded-full" title={auth.currentUser.displayName}>
                                     <img src={auth.currentUser?.photoURL} />
                                 </div>
                             </label>
