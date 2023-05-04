@@ -6,8 +6,8 @@ import ActiveLink from '../../ActiveLink/ActiveLink';
 
 
 const Header = () => {
-    const { user ,logOut} = useContext(AuthContext);
-
+    const { auth , logOut} = useContext(AuthContext);
+    
     const logOutUser=()=>{
         logOut()
         .then()
@@ -32,14 +32,14 @@ const Header = () => {
 
                     <div className='flex gap-5'>
                         {
-                            user && <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            auth.currentUser && <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                    <img src={auth.currentUser?.photoURL} />
                                 </div>
                             </label>
                         }
 
-                        {user ?
+                        {auth.currentUser ?
                             <button className="btn btn-success" onClick={logOutUser}>Logout</button> :
                             <button className="btn btn-warning"><Link to='/login'>Login</Link></button>
                         }

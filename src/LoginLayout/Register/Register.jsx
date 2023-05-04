@@ -7,7 +7,7 @@ const Register = () => {
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
 
-    const {createUser,singInGoogle,signInGithub} = useContext(AuthContext);
+    const {createUser,singInGoogle,signInGithub, profileUpdate } = useContext(AuthContext);
 
 
     const googleSignIn=()=>{
@@ -52,8 +52,7 @@ const Register = () => {
 
         createUser(email,password)
         .then(result=>{
-            const loaduser=result.user;
-            console.log(loaduser)
+            profileUpdate({ name, photoUrl: photo })
             setSuccess('Successfully Register')
             form.reset();
         })

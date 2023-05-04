@@ -26,15 +26,6 @@ const Login = () => {
         const form=event.target;
         const email=form.email.value;
         const password=form.password.value;
-        console.log(email,password);
-
-        // password and email condition
-
-        // if(password != email){
-        //     setError('password and email doesnt match')
-        //     return
-        // }
-       
 
         signIn(email,password)
         .then(result=>{
@@ -45,9 +36,11 @@ const Login = () => {
             form.reset();
         })
         .catch(error=>{
-            console.log(error);
-            setError(error.message)
-            form.reset();
+            if (error.code == "auth/wrong-password") {
+                setError("Invalid email or password")
+            } else {
+                setError(error.message)
+            }
         })
     }
 
